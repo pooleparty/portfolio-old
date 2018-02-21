@@ -17,6 +17,6 @@ const App: React.SFC<Props> = ({ className }) => (
 );
 
 export default styled(App)`
-    padding: ${pxToRem(30)};
-    min-height: 100vh;
-  `;
+  padding: ${pxToRem(30)};
+  min-height: 100vh;
+`;

@@ -5,12 +5,9 @@ import { ServerStyleSheet } from 'styled-components';
 import logger from '../utils/logger';
 
 export default (url: string) => {
-
   logger.info('Calling renderer with path:', url);
 
-  const app = (
-    <h1>Hello World</h1>
-  );
+  const app = <h1>Hello World</h1>;
 
   const sheet = new ServerStyleSheet();
   const html = renderToString(sheet.collectStyles(app));

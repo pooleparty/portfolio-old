@@ -31,10 +31,12 @@ describe('renderer', () => {
     const url = '/';
     const { head } = renderer(url);
 
-    expect(head.trim()).toEqual([
-      '<title>The title</title>',
-      '<meta name="meta" description="the meta">',
-      '<link rel="stylesheet" href="/link/to/styles.css" />',
-    ].join('\n'));
+    expect(head.trim()).toEqual(
+      [
+        '<title>The title</title>',
+        '<meta name="meta" description="the meta">',
+        '<link rel="stylesheet" href="/link/to/styles.css" />',
+      ].join('\n'),
+    );
   });
 });
