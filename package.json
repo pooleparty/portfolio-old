@@ -22,7 +22,13 @@
     "test:coverage": "npm run test -- --coverage",
     "clean": "rimraf public; rimraf views",
     "validate": "npm-run-all --parallel test:coverage lint",
-    "prepush": "npm run validate"
+    "format": "prettier --write \"src/**/*.{ts,tsx}\"",
+    "prepush": "npm run validate",
+    "precommit": "lint-staged",
+    "docker:build": "npm run docker:clean && docker build -t portfolio --no-cache .",
+    "docker:run": "docker run -d -p 3000:3000 --name portfolio-container portfolio",
+    "docker:stop": "docker stop portfolio-container || true",
+    "docker:clean": "npm run docker:stop && (docker rmi $(docker images -f \"dangling=true\" -q) || true) && (docker rm portfolio-container || true)"
   },
   "repository": {
     "type": "git",
@@ -49,8 +55,10 @@
     "husky": "^0.14.3",
     "jest": "^22.3.0",
     "jest-styled-components": "^4.10.0",
+    "lint-staged": "^6.1.1",
     "nodemon": "^1.14.12",
     "npm-run-all": "^4.1.2",
+    "prettier": "1.10.2",
     "raw-loader": "^0.5.1",
     "rimraf": "^2.6.2",
     "svg-inline-loader": "^0.8.0",
@@ -87,5 +95,11 @@
     "styled-components": "~3.1.0",
     "tinycolor2": "~1.4.1",
     "winston": "~2.4.0"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }
