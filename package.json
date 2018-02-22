@@ -98,6 +98,7 @@
   },
   "lint-staged": {
     "*.{ts,tsx}": [
+      "tslint -p tsconfig.js --fix",
       "prettier --write",
       "git add"
     ]
