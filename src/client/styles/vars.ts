@@ -6,3 +6,10 @@ export const COLORS = {
   gray1: '#818C95',
   gray2: '#3C4C5C',
 };
+
+export const BREAKPOINTS = {
+  mobile: '660px',
+};
+
+export const NAVBAR_HEIGHT = '64px';
+export const SIDEBAR_WIDTH = '190px';

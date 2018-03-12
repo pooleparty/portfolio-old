@@ -3,11 +3,12 @@ import { renderToString } from 'react-dom/server';
 import { Helmet } from 'react-helmet';
 import { ServerStyleSheet } from 'styled-components';
 import logger from '../utils/logger';
+import App from '../../client/App';
 
 export default (url: string) => {
   logger.info('Calling renderer with path:', url);
 
-  const app = <h1>Hello World</h1>;
+  const app = <App />;
 
   const sheet = new ServerStyleSheet();
   const html = renderToString(sheet.collectStyles(app));
