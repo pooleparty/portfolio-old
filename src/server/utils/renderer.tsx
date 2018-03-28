@@ -5,7 +5,7 @@ import { ServerStyleSheet } from 'styled-components';
 import logger from '../utils/logger';
 import App from '../../client/App';
 
-export default (url: string) => {
+const renderer = (url: string) => {
   logger.info('Calling renderer with path:', url);
 
   const app = <App />;
@@ -24,3 +24,5 @@ export default (url: string) => {
     html,
   };
 };
+
+export default renderer;

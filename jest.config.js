@@ -9,6 +9,7 @@ module.exports = {
   coveragePathIgnorePatterns: [
     "/node_modules/",
     "/test/",
+    "/src/client/styles/",
     "/src/typings.d.ts",
     "/src/global.d.ts",
     "/src/types.d.ts"
