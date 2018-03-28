@@ -1,21 +1,27 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { pxToRem } from '../styles/utils';
+import { BREAKPOINTS } from '../styles/vars';
 import SectionHeader from './SectionHeader';
 
 interface Props {
-  className?: string;
+  id?: string;
   title?: string;
 }
 
 const SectionContent = styled.div`
-  width: 90%;
-  margin: auto;
+  padding: 40px 50px;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+
+  @media (max-width: ${BREAKPOINTS.mobile}) {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
 `;
 
-const Section: React.SFC<Props> = ({ className, title, ...rest }) => (
-  <div className={className} {...rest}>
+const Section: React.SFC<Props> = ({ title, ...rest }) => (
+  <div {...rest}>
     <SectionHeader title={title} />
     <SectionContent>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore rem
@@ -27,10 +33,8 @@ const Section: React.SFC<Props> = ({ className, title, ...rest }) => (
 );
 
 Section.propTypes = {
-  className: PropTypes.string,
+  id: PropTypes.string,
   title: PropTypes.string.isRequired,
 };
 
-export default styled(Section)`
-  padding-bottom: ${pxToRem(30)};
-`;
+export default Section;

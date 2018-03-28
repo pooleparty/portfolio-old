@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import { lighten } from 'polished';
 import { pxToRem } from '../styles/utils';
 import {
   COLORS,
@@ -19,6 +20,10 @@ const NameLink = styled.a`
   font-size: ${pxToRem(22)};
 `;
 
+const Title = styled.span`
+  font-size: 0.75rem;
+`;
+
 const MobileNavBar = styled.nav`
   display: none;
 
@@ -28,7 +33,9 @@ const MobileNavBar = styled.nav`
     text-align: center;
     padding-top: ${pxToRem(15)};
     height: ${NAVBAR_HEIGHT};
-    background-color: ${COLORS.gray2};
+    background-color: ${COLORS.darkBlue};
+    position: fixed;
+    top: 0;
   }
 `;
 
@@ -36,7 +43,7 @@ const NavBar = styled.nav`
   position: fixed;
   left: 0;
   min-height: 100vh;
-  background-color: ${COLORS.gray2};
+  background-color: ${COLORS.darkBlue};
 
   @media (max-width: ${BREAKPOINTS.mobile}) {
     display: none;
@@ -62,15 +69,19 @@ const NavBar = styled.nav`
 const SideBarLink = styled.a`
   display: block;
   line-height: 100%;
-  padding: 10px 0 12px;
+  padding: 12px;
   text-decoration: none;
   color: ${COLORS.white};
+
+  &:hover {
+    background-color: ${lighten(0.2, COLORS.darkBlue)};
+  }
 `;
 
 const Name = (
   <div>
     <NameLink href="#main">Josh Poole</NameLink>
-    <span>Full Stack Developer</span>
+    <Title>Full Stack Developer</Title>
   </div>
 );
 

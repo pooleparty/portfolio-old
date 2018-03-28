@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled, { injectGlobal } from 'styled-components';
 import base from './styles/base';
-import { BREAKPOINTS, SIDEBAR_WIDTH } from './styles/vars';
+import { BREAKPOINTS, SIDEBAR_WIDTH, NAVBAR_HEIGHT } from './styles/vars';
 import NavigationMenu from './components/NavigationMenu';
 import Section from './components/Section';
 
@@ -11,14 +11,28 @@ interface Props {
   className?: string;
 }
 
+const HeroImage = styled.img`
+  width: 100%;
+
+  @media (max-width: ${BREAKPOINTS.mobile}) {
+    display: none;
+  }
+`;
+
 const AppContainer = styled.div`
-  padding-left: ${SIDEBAR_WIDTH};
+  margin-left: ${SIDEBAR_WIDTH};
+
+  @media (max-width: ${BREAKPOINTS.mobile}) {
+    margin-left: 0;
+    margin-top: ${NAVBAR_HEIGHT};
+  }
 `;
 
 const App: React.SFC<Props> = ({ className }) => (
   <div className={className}>
     <NavigationMenu />
     <AppContainer>
+      <HeroImage id="main" src="images/hero.jpg" />
       <Section id="about" title="About" />
       <Section id="experience" title="Experience" />
       <Section id="projects" title="Projects" />
@@ -29,8 +43,4 @@ const App: React.SFC<Props> = ({ className }) => (
   </div>
 );
 
-export default styled(App)`
-  @media (max-width: ${BREAKPOINTS.mobile}) {
-    flex-direction: column;
-  }
-`;
+export default App;

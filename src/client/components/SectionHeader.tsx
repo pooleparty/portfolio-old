@@ -1,32 +1,32 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { COLORS } from '../styles/vars';
+import { BREAKPOINTS, COLORS } from '../styles/vars';
+import { headerFont } from '../styles/utils';
 
 interface Props {
-  className?: string;
   title?: string;
 }
 
-const Title = styled.h1`
-  font-weight: 200;
-  margin-bottom: 60px;
-  margin-top: 0;
-  padding: 30px 40px;
-  text-transform: uppercase;
-`;
-
-const SectionHeader: React.SFC<Props> = ({ className, title, ...rest }) => (
-  <Title className={className} {...rest}>
-    {title}
-  </Title>
+const SectionHeader: React.SFC<Props> = ({ title, ...rest }) => (
+  <div {...rest}>{title}</div>
 );
 
 SectionHeader.propTypes = {
-  className: PropTypes.string,
   title: PropTypes.string.isRequired,
 };
 
 export default styled(SectionHeader)`
-  background-color: ${COLORS.gray1};
+  background-color: ${COLORS.blue};
+  ${headerFont()};
+  font-size: 2rem;
+  font-weight: 200;
+  margin-top: 0;
+  padding: 30px 40px;
+  text-transform: uppercase;
+
+  @media (max-width: ${BREAKPOINTS.mobile}) {
+    font-size: 1.5rem;
+    padding: 20px 30px;
+  }
 `;

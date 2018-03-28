@@ -57,7 +57,8 @@ typings/
 # dotenv environment variables file
 .env
 
-public
+public/bundles
 build
 coverage
 views
+.DS_Store
