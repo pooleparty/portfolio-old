@@ -20,7 +20,7 @@
     "test": "jest",
     "test:watch": "npm run test -- --watch",
     "test:coverage": "npm run test -- --coverage",
-    "clean": "rimraf public; rimraf views",
+    "clean": "rimraf public/bundles; rimraf views",
     "validate": "npm-run-all --parallel test:coverage lint",
     "format": "prettier --write \"src/**/*.{ts,tsx}\"",
     "prepush": "npm run validate",
@@ -43,6 +43,7 @@
     "@types/express": "^4.11.1",
     "@types/jest": "^22.1.2",
     "@types/lodash": "^4.14.102",
+    "@types/prop-types": "^15.5.2",
     "@types/react": "^16.0.38",
     "@types/react-dom": "^16.0.4",
     "@types/react-helmet": "^5.0.4",
@@ -83,6 +84,7 @@
     "express": "4.15.4",
     "image-webpack-loader": "~3.4.2",
     "lodash": "~4.17.4",
+    "polished": "^1.9.2",
     "react": "16.0.0",
     "react-dom": "16.0.0",
     "react-helmet": "5.2.0",
@@ -98,7 +100,7 @@
   },
   "lint-staged": {
     "*.{ts,tsx}": [
-      "tslint -p tsconfig.js --fix",
+      "tslint -p tsconfig.json --fix",
       "prettier --write",
       "git add"
     ]

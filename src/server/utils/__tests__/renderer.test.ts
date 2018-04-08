@@ -3,6 +3,7 @@ import { renderToString } from 'react-dom/server';
 import renderer from '../renderer';
 
 jest.mock('styled-components');
+jest.mock('../../../client/App', () => 'div');
 jest.mock('react-dom/server');
 jest.mock('react-helmet', () => {
   const obj: any = { Helmet: {} };

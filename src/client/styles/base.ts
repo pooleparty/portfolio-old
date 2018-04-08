@@ -15,7 +15,7 @@ export default `
   html {
     ${baseFont()};
     color: ${COLORS.white};
-    background: ${COLORS.base};
+    background: ${COLORS.greyBlue};
     font-size: 100%;
   }
 
@@ -35,5 +35,5 @@ export default `
 
   h1, h2, h3, h4, h5, h6 {
     ${headerFont()};
-}
+  }
 `;
