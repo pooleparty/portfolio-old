@@ -1,41 +1,41 @@
-const path = require("path");
-const merge = require("webpack-merge");
+const path = require('path');
+const merge = require('webpack-merge');
 
 const PATHS = {
-  src: path.join(__dirname, "src")
+  src: path.join(__dirname, 'src'),
 };
 
 module.exports = merge({
-  devtool: "source-map",
+  devtool: 'source-map',
   resolve: {
-    extensions: [".js", ".json", ".ts", ".tsx"]
+    extensions: ['.js', '.json', '.ts', '.tsx'],
   },
   module: {
     rules: [
       {
         test: /\.tsx?$/,
-        enforce: "pre",
-        loader: "tslint-loader"
+        enforce: 'pre',
+        loader: 'tslint-loader',
       },
       {
         test: /\.tsx?$/,
         include: [PATHS.src],
-        loader: "awesome-typescript-loader"
+        loader: 'awesome-typescript-loader',
       },
       {
         test: /\.(gif|png|jpe?g)$/i,
         include: [PATHS.src],
         use: [
-          "file-loader",
+          'file-loader',
           {
-            loader: "image-webpack-loader"
-          }
-        ]
+            loader: 'image-webpack-loader',
+          },
+        ],
       },
       {
         test: /\.svg$/,
-        loader: "svg-inline-loader"
-      }
-    ]
-  }
+        loader: 'svg-inline-loader',
+      },
+    ],
+  },
 });

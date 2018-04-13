@@ -1,46 +1,24 @@
 import * as React from 'react';
-import styled, { injectGlobal } from 'styled-components';
+import { renderRoutes, RouteConfig } from 'react-router-config';
+import { injectGlobal } from 'styled-components';
 import base from './styles/base';
-import { BREAKPOINTS, SIDEBAR_WIDTH, NAVBAR_HEIGHT } from './styles/vars';
-import NavigationMenu from './components/NavigationMenu';
-import Section from './components/Section';
 
-injectGlobal`${base}`;
+injectGlobal`
+  ${base}
+`;
 
 interface Props {
+  route: {
+    routes: RouteConfig[];
+  };
   className?: string;
+  location: {
+    pathname: string;
+  };
 }
 
-const HeroImage = styled.img`
-  width: 100%;
-
-  @media (max-width: ${BREAKPOINTS.mobile}) {
-    display: none;
-  }
-`;
-
-const AppContainer = styled.div`
-  margin-left: ${SIDEBAR_WIDTH};
-
-  @media (max-width: ${BREAKPOINTS.mobile}) {
-    margin-left: 0;
-    margin-top: ${NAVBAR_HEIGHT};
-  }
-`;
-
-const App: React.SFC<Props> = ({ className }) => (
-  <div className={className}>
-    <NavigationMenu />
-    <AppContainer>
-      <HeroImage id="main" src="images/hero.jpg" />
-      <Section id="about" title="About" />
-      <Section id="experience" title="Experience" />
-      <Section id="projects" title="Projects" />
-      <Section id="skills" title="Skills" />
-      <Section id="education" title="Education" />
-      <Section id="contact" title="Contact" />
-    </AppContainer>
-  </div>
+const App: React.SFC<Props> = ({ route, className }) => (
+  <div className={className}>{renderRoutes(route.routes)}</div>
 );
 
 export default App;

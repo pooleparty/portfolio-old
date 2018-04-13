@@ -32,6 +32,7 @@
     "prefer-template": [true, "allow-single-concat"],
     "quotemark": [true, "single", "jsx-double"],
     "strict-boolean-expressions": false,
+    "ter-arrow-parens": false,
     "triple-equals": [true, "allow-null-check"],
     "typedef": [true, "parameter", "property-declaration"],
     "variable-name": [
