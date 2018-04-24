@@ -1,4 +1,4 @@
-import * as winston from 'winston';
+import winston from 'winston';
 
 // no logging for tests
 winston.remove(winston.transports.Console);
