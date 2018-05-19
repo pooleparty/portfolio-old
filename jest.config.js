@@ -1,30 +1,30 @@
 module.exports = {
-  moduleFileExtensions: ["ts", "tsx", "js"],
-  collectCoverageFrom: ["**/*.{ts,tsx}"],
+  moduleFileExtensions: ['ts', 'tsx', 'js'],
+  collectCoverageFrom: ['**/*.{ts,tsx}'],
   mapCoverage: true,
   transform: {
-    "^.+\\.(j|t)sx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    '^.+\\.(j|t)sx?$': '<rootDir>/node_modules/ts-jest/preprocessor.js',
   },
-  testMatch: ["**/__tests__/*.(ts|tsx)"],
+  testMatch: ['**/__tests__/*.(ts|tsx)'],
   coveragePathIgnorePatterns: [
-    "/node_modules/",
-    "/test/",
-    "/src/client/styles/",
-    "/src/typings.d.ts",
-    "/src/global.d.ts",
-    "/src/types.d.ts"
+    '/node_modules/',
+    '/test/',
+    '/src/client/styles/',
+    '/src/typings.d.ts',
+    '/src/global.d.ts',
+    '/src/types.d.ts',
   ],
   coverageThreshold: {
     global: {
-      branches: 90,
-      functions: 85,
-      lines: 95,
-      statements: 95
-    }
+      branches: 75,
+      functions: 75,
+      lines: 75,
+      statements: 75,
+    },
   },
-  setupFiles: ["./test/setup.js"],
+  setupFiles: ['./test/setup.js'],
   moduleNameMapper: {
-    "\\.(css|jpg|png|svg)$": "<rootDir>/test/empty-module.js"
+    '\\.(css|jpg|png|svg)$': '<rootDir>/test/empty-module.js',
   },
-  watchPathIgnorePatterns: ["<rootDir>/public", "<rootDir>/build"]
+  watchPathIgnorePatterns: ['<rootDir>/public', '<rootDir>/build'],
 };

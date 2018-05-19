@@ -3,8 +3,6 @@ export default function smoothScrollTo(elementId: string) {
   if (element) {
     element.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-    if (window) {
-      window.history.replaceState(null, '', elementId);
-    }
+    window.history.replaceState(null, '', elementId);
   }
 }
