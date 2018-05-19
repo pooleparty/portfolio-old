@@ -8,6 +8,7 @@ import {
   NAVBAR_HEIGHT,
   SIDEBAR_WIDTH,
 } from '../styles/vars';
+import smoothScrollTo from '../utils/smoothScrollTo';
 
 interface Props {
   className?: string;
@@ -78,36 +79,68 @@ const SideBarLink = styled.a`
   }
 `;
 
+const sidebarLinks = [
+  {
+    text: 'About',
+    elementId: 'about',
+  },
+  {
+    text: 'Experience',
+    elementId: 'experience',
+  },
+  {
+    text: 'Projects',
+    elementId: 'projects',
+  },
+  {
+    text: 'Skills',
+    elementId: 'skills',
+  },
+  {
+    text: 'Education',
+    elementId: 'education',
+  },
+  {
+    text: 'Contact',
+    elementId: 'contact',
+  },
+];
+
+const onLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  e.preventDefault();
+  const elementId = e.currentTarget.getAttribute('href');
+  if (elementId) {
+    smoothScrollTo(elementId);
+  }
+};
+
 const Name = (
   <div>
-    <NameLink href="#main">Josh Poole</NameLink>
+    <NameLink href="#main" onClick={onLinkClick}>
+      Josh Poole
+    </NameLink>
     <Title>Full Stack Developer</Title>
   </div>
 );
+
+const renderSidebarLinks = () => {
+  return sidebarLinks.map(({ text, elementId }) => {
+    return (
+      <li key={elementId}>
+        <SideBarLink href={`#${elementId}`} onClick={onLinkClick}>
+          {text}
+        </SideBarLink>
+      </li>
+    );
+  });
+};
 
 const NavigationMenu: React.SFC<Props> = ({ className }) => (
   <div>
     <NavBar>
       <ul>
         <li className="logo">{Name}</li>
-        <li>
-          <SideBarLink href="#about">About</SideBarLink>
-        </li>
-        <li>
-          <SideBarLink href="#experience">Experience</SideBarLink>
-        </li>
-        <li>
-          <SideBarLink href="#projects">Projects</SideBarLink>
-        </li>
-        <li>
-          <SideBarLink href="#skills">Skills</SideBarLink>
-        </li>
-        <li>
-          <SideBarLink href="#education">Education</SideBarLink>
-        </li>
-        <li>
-          <SideBarLink href="#contact">Contact</SideBarLink>
-        </li>
+        {renderSidebarLinks()}
       </ul>
     </NavBar>
     <MobileNavBar>{Name}</MobileNavBar>

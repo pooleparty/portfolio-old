@@ -4,11 +4,11 @@
   "description": "Josh Poole's portfolio",
   "main": "index.js",
   "scripts": {
-    "dev": "npm-run-all --parallel dev:*",
+    "dev": "npm-run-all -l -n --parallel dev:*server",
     "dev:server": "nodemon --watch build --exec \"node build/bundle.js\"",
     "dev:watch-server": "npm run build-server -- --watch",
-    "predev:watch-client": "npm run clean",
-    "dev:watch-client": "webpack --config webpack.client.js --watch",
+    "predev:client": "npm run clean",
+    "dev:client": "webpack --config webpack.client.js --watch",
     "build-server": "webpack --config webpack.server.js",
     "prod:build-server": "npm run build-server -- -p",
     "preprod:build-client": "npm run clean",
@@ -75,6 +75,7 @@
     "webpack-node-externals": "^1.6.0"
   },
   "dependencies": {
+    "@types/smoothscroll-polyfill": "^0.3.0",
     "await-to-js": "~2.0.1",
     "axios": "0.16.2",
     "boom": "~7.1.1",
@@ -94,6 +95,7 @@
     "redux": "3.7.2",
     "redux-thunk": "2.2.0",
     "serialize-javascript": "1.4.0",
+    "smoothscroll-polyfill": "^0.4.3",
     "styled-components": "~3.1.0",
     "tinycolor2": "~1.4.1",
     "winston": "~2.4.0"
