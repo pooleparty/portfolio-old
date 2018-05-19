@@ -1,4 +1,4 @@
-FROM node:8.9.4
+FROM node:8.11.1
 
 # reset npm loglevel (https://github.com/nodejs/docker-node/issues/57)
 ENV NPM_CONFIG_LOGLEVEL warn
