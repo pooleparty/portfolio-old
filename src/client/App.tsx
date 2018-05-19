@@ -4,6 +4,7 @@ import base from './styles/base';
 import { BREAKPOINTS, SIDEBAR_WIDTH, NAVBAR_HEIGHT } from './styles/vars';
 import NavigationMenu from './components/NavigationMenu';
 import Section from './components/Section';
+import Meta from './Meta';
 
 injectGlobal`${base}`;
 
@@ -30,6 +31,7 @@ const AppContainer = styled.div`
 
 const App: React.SFC<Props> = ({ className }) => (
   <div className={className}>
+    <Meta />
     <NavigationMenu />
     <AppContainer>
       <HeroImage id="main" src="images/hero.jpg" />
