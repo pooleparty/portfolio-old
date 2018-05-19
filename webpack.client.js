@@ -37,7 +37,7 @@ const config = {
   output: {
     filename: "[name].js",
     path: path.resolve(__dirname, "public/bundles"),
-    publicPath: "/"
+    publicPath: "/bundles"
   },
   plugins: [indexPage, errorPage]
 };
