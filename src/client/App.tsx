@@ -4,6 +4,7 @@ import base from './styles/base';
 import { BREAKPOINTS, SIDEBAR_WIDTH, NAVBAR_HEIGHT } from './styles/vars';
 import NavigationMenu from './components/NavigationMenu';
 import Section from './components/Section';
+import Skills from './components/Skills';
 import Meta from './Meta';
 
 injectGlobal`${base}`;
@@ -38,7 +39,9 @@ const App: React.SFC<Props> = ({ className }) => (
       <Section id="about" title="About" />
       <Section id="experience" title="Experience" />
       <Section id="projects" title="Projects" />
-      <Section id="skills" title="Skills" />
+      <Section id="skills" title="Skills">
+        <Skills />
+      </Section>
       <Section id="education" title="Education" />
       <Section id="contact" title="Contact" />
     </AppContainer>

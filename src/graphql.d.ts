@@ -3,7 +3,7 @@
 
 declare namespace GQL {
   interface IGraphQLResponseRoot {
-    data?: IQuery | IMutation;
+    data?: IQuery;
     errors?: Array<IGraphQLResponseError>;
   }
 
@@ -22,75 +22,43 @@ declare namespace GQL {
 
   interface IQuery {
     __typename: 'Query';
-    books: Array<IBook> | null;
-    book: IBook | null;
-    authors: Array<IAuthor> | null;
-    author: IAuthor | null;
-    ratings: Array<IRating> | null;
+    skills: Array<ISkill> | null;
+    projects: Array<IProject> | null;
+    experience: Array<IExperience> | null;
   }
 
-  interface IBookOnQueryArguments {
-    id: number;
+  interface ISkill {
+    __typename: 'Skill';
+    name: string;
+    category: SkillCategory;
+    logo: string;
   }
 
-  interface IAuthorOnQueryArguments {
-    id: number;
+  enum SkillCategory {
+    HTML = 'HTML',
+    CSS = 'CSS',
+    JAVASCRIPT = 'JAVASCRIPT',
+    TESTING = 'TESTING',
+    BUILD_TOOLS = 'BUILD_TOOLS',
+    BACK_END = 'BACK_END',
+    OTHER = 'OTHER',
   }
 
-  interface IRatingsOnQueryArguments {
-    bookId: number;
+  interface IProject {
+    __typename: 'Project';
+    name: string;
+    description: string;
+    link: string;
   }
 
-  interface IBook {
-    __typename: 'Book';
-    id: string;
+  interface IExperience {
+    __typename: 'Experience';
     title: string;
-    price: number;
-    author: IAuthor;
-    ratings: Array<IRating> | null;
-    publishDate: any;
-  }
-
-  interface IPriceOnBookArguments {
-    /**
-     * @default USD
-     */
-    currency?: Currency | null;
-  }
-
-  enum Currency {
-    USD = 'USD',
-    EUR = 'EUR',
-  }
-
-  interface IAuthor {
-    __typename: 'Author';
-    id: string;
-    firstName: string;
-    lastName: string;
-    books: Array<IBook> | null;
-  }
-
-  interface IRating {
-    __typename: 'Rating';
-    stars: number;
-    comment: string | null;
-    book: IBook | null;
-  }
-
-  interface IMutation {
-    __typename: 'Mutation';
-    createRating: IRating | null;
-  }
-
-  interface ICreateRatingOnMutationArguments {
-    bookId: number;
-    rating: IRatingInput;
-  }
-
-  interface IRatingInput {
-    stars: number;
-    comment?: string | null;
+    description: string;
+    company: string;
+    location: string;
+    startDate: any;
+    endDate: any | null;
   }
 }
 

@@ -1,7 +1,7 @@
 interface IDatabase {
-  books: DB.IBook[];
-  authors: DB.IAuthor[];
-  ratings: DB.IRating[];
+  skills: DB.ISkill[];
+  projects: DB.IProject[];
+  experience: DB.IExperience[];
 }
 
 interface IContext {
@@ -9,23 +9,24 @@ interface IContext {
 }
 
 declare namespace DB {
-  interface IBook {
-    id: string | number;
+  interface ISkill {
+    name: string;
+    category: GQL.SkillCategory | string;
+    logo: string;
+  }
+
+  interface IProject {
+    name: string;
+    description: string;
+    link: string;
+  }
+
+  interface IExperience {
     title: string;
-    price: number;
-    authorId: string | number;
-    publishDate: Date;
-  }
-
-  interface IAuthor {
-    id: string | number;
-    firstName: string;
-    lastName: string;
-  }
-
-  interface IRating {
-    bookId: string | number;
-    stars: number;
-    comment: string | null;
+    description: string;
+    company: string;
+    location: string;
+    startDate: any;
+    endDate?: any | null;
   }
 }
