@@ -9,7 +9,7 @@ const books: DB.ISkill[] = [
   },
   {
     name: 'Nodejs',
-    category: 'JAVASCRIPT',
+    category: 'BACK END',
     logo:
       'https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg',
   },
@@ -61,19 +61,37 @@ const books: DB.ISkill[] = [
   },
   {
     name: 'webpack',
-    category: 'BUILD_TOOLS',
+    category: 'BUILD TOOLS',
     logo: 'https://webpack.js.org/assets/icon-square-big.svg',
   },
   {
     name: 'Babel',
-    category: 'BUILD_TOOLS',
+    category: 'BUILD TOOLS',
     logo: 'https://cdn.worldvectorlogo.com/logos/babel-10.svg',
+  },
+  {
+    name: 'Jenkins',
+    category: 'BUILD TOOLS',
+    logo:
+      'https://upload.wikimedia.org/wikipedia/commons/e/e9/Jenkins_logo.svg',
   },
   {
     name: 'Github',
     category: 'OTHER',
     logo:
       'https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg',
+  },
+  {
+    name: 'AWS',
+    category: 'OTHER',
+    logo:
+      'https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg',
+  },
+  {
+    name: 'PostgresQL',
+    category: 'BACK END',
+    logo:
+      'https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg',
   },
 ];
 

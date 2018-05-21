@@ -20,7 +20,7 @@ const skillsQuery = gql`
 class SkillsQuery extends Query<GQL.IQuery> {}
 
 const SkillCategory = styled.div`
-  color: ${COLORS.black};
+  color: ${transparentize(0.4, COLORS.black)};
   background: ${COLORS.white};
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
   padding: 2rem;
@@ -31,7 +31,6 @@ const SkillCategoryHeader = styled.div`
   font-size: 1.625rem;
   font-weight: bold;
   font-family: 'Montserrat', sans-serif;
-  color: ${transparentize(0.4, COLORS.black)};
   border-bottom: 1px solid ${transparentize(0.4, COLORS.black)};
   padding-bottom: 1rem;
   margin-bottom: 1.5rem;
@@ -49,6 +48,7 @@ const Skill = styled.div`
 const SkillLogo = styled.img`
   width: 128px;
   height: 128px;
+  margin-bottom: 4px;
 `;
 
 const SkillName = styled.div`
