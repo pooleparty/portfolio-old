@@ -21,18 +21,8 @@ type Project {
 
 type Skill {
   name: String!
-  category: SkillCategory!
+  category: String!
   logo: String!
-}
-
-enum SkillCategory {
-  HTML
-  CSS
-  JAVASCRIPT
-  TESTING
-  BUILD_TOOLS
-  BACK_END
-  OTHER
 }
 
 scalar Date

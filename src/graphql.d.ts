@@ -30,18 +30,8 @@ declare namespace GQL {
   interface ISkill {
     __typename: 'Skill';
     name: string;
-    category: SkillCategory;
+    category: string;
     logo: string;
-  }
-
-  enum SkillCategory {
-    HTML = 'HTML',
-    CSS = 'CSS',
-    JAVASCRIPT = 'JAVASCRIPT',
-    TESTING = 'TESTING',
-    BUILD_TOOLS = 'BUILD_TOOLS',
-    BACK_END = 'BACK_END',
-    OTHER = 'OTHER',
   }
 
   interface IProject {
