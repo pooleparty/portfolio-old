@@ -2,26 +2,21 @@ import { baseFont, headerFont, pxToRem } from './utils';
 import { COLORS } from './vars';
 
 export default `
-@import url('https://fonts.googleapis.com/css?family=Montserrat|Raleway');
-
   html {
     box-sizing: border-box;
+    font-size: 62.5%;
+    ${baseFont()};
+    color: ${COLORS.white};
+    background: ${COLORS.greyBlue};
   }
 
   *, *::before, *::after {
     box-sizing: inherit;
   }
 
-  html {
-    ${baseFont()};
-    color: ${COLORS.white};
-    background: ${COLORS.greyBlue};
-    font-size: 100%;
-  }
-
   body {
     margin: 0;
-    font-size: ${pxToRem(14)};
+    font-size: 1.6rem;
     line-height: 1.35
 
     @media only screen and (min-width: 992px) {

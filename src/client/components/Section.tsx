@@ -1,28 +1,16 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import styled from 'styled-components';
-import { BREAKPOINTS } from '../styles/vars';
-import SectionHeader from './SectionHeader';
+import SectionHeader from '../styledComponents/SectionHeader';
+import SectionContent from '../styledComponents/SectionContent';
 
 interface Props {
   id?: string;
   title?: string;
 }
 
-const SectionContent = styled.div`
-  padding: 40px 50px;
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-
-  @media (max-width: ${BREAKPOINTS.mobile}) {
-    font-size: 1rem;
-    line-height: 1.5rem;
-  }
-`;
-
 const Section: React.SFC<Props> = ({ title, ...rest }) => (
   <div {...rest}>
-    <SectionHeader title={title} />
+    <SectionHeader>{title}</SectionHeader>
     <SectionContent>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore rem
       possimus ut optio quam assumenda totam ducimus repellendus ullam non
