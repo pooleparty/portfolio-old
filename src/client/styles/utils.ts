@@ -1,5 +1,4 @@
-export const pxToRem = (value: number): string => {
-  const base = 16;
+export const pxToRem = (value: number, base: number = 10): string => {
   return `${value / base}rem`;
 };
 
