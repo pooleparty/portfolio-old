@@ -14,14 +14,14 @@ module.exports = {
     '/src/global.d.ts',
     '/src/types.d.ts',
   ],
-  coverageThreshold: {
-    global: {
-      branches: 75,
-      functions: 75,
-      lines: 75,
-      statements: 75,
-    },
-  },
+  // coverageThreshold: {
+  //   global: {
+  //     branches: 75,
+  //     functions: 75,
+  //     lines: 75,
+  //     statements: 75,
+  //   },
+  // },
   setupFiles: ['./test/setup.js'],
   moduleNameMapper: {
     '\\.(css|jpg|png|svg)$': '<rootDir>/test/empty-module.js',
