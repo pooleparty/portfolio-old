@@ -5,6 +5,7 @@ export const COLORS = {
   font: '#3C9EE9',
   greyBlue: '#7B9EC6',
   darkBlue: '#054790',
+  secondary: '#FF6D37',
 };
 
 export function lighten(color: string, amount: number) {
@@ -20,7 +21,7 @@ export function lighten(color: string, amount: number) {
 // };
 
 export const BREAKPOINTS = {
-  mobile: '660px',
+  mobile: '60rem',
 };
 
 export const NAVBAR_HEIGHT = '64px';
