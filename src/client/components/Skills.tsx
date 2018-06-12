@@ -61,9 +61,13 @@ const Skills = () => {
   return (
     <SkillsQuery query={skillsQuery}>
       {({ loading, error, data }) => {
-        if (loading) return <p>Loading...</p>;
-        if (error)
+        if (loading) {
+          return <p>Loading...</p>;
+        }
+
+        if (error) {
           return <GraphQLError>{JSON.stringify(error, null, 2)}</GraphQLError>;
+        }
 
         if (!data || !data.skills) {
           return null;

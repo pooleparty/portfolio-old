@@ -1,7 +1,6 @@
 module.exports = {
   moduleFileExtensions: ['ts', 'tsx', 'js'],
   collectCoverageFrom: ['**/*.{ts,tsx}'],
-  mapCoverage: true,
   transform: {
     "\\.(gql|graphql)$": "jest-transform-graphql",
     '^.+\\.(j|t)sx?$': '<rootDir>/node_modules/ts-jest/preprocessor.js',
