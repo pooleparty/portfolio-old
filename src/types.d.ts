@@ -2,6 +2,7 @@ interface IDatabase {
   skills?: DB.ISkill[];
   projects?: DB.IProject[];
   experience?: DB.IExperience[];
+  contactInfo?: DB.IContactInfo;
 }
 
 interface IContext {
@@ -28,5 +29,11 @@ declare namespace DB {
     location: string;
     startDate: any;
     endDate?: any | null;
+  }
+
+  interface IContactInfo {
+    email: string;
+    github: string;
+    linkedin: string;
   }
 }

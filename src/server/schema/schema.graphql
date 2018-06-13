@@ -2,6 +2,7 @@ type Query {
   skills: [Skill]
   projects: [Project]
   experience: [Experience]
+  contactInfo: ContactInfo
 }
 
 type Experience {
@@ -23,6 +24,12 @@ type Skill {
   name: String!
   category: String!
   logo: String!
+}
+
+type ContactInfo {
+  email: String!
+  github: String!
+  linkedin: String!
 }
 
 scalar Date

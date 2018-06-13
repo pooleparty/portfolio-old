@@ -25,7 +25,6 @@ const dateScalar = new GraphQLScalarType({
 const resolvers = {
   Query: {
     skills: (obj, args, context: IContext) => {
-      console.log('\n\nskills query\n\n');
       return context.db.skills;
     },
     projects: (obj, args, context: IContext) => {
@@ -33,6 +32,9 @@ const resolvers = {
     },
     experience: (obj, args, context: IContext) => {
       return context.db.experience;
+    },
+    contactInfo: (obj, args, context: IContext) => {
+      return context.db.contactInfo;
     },
   },
   Date: dateScalar,

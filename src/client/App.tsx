@@ -7,6 +7,7 @@ import Skills from './components/Skills';
 import Meta from './Meta';
 import HeroImage from './styledComponents/HeroImage';
 import AppContainer from './styledComponents/AppContainer';
+import ContactInfo from './components/ContactInfo';
 
 injectGlobal`${base}`;
 
@@ -27,7 +28,9 @@ const App: React.SFC<Props> = ({ className }) => (
         <Skills />
       </Section>
       <Section id="education" title="Education" />
-      <Section id="contact" title="Contact" />
+      <Section id="contact" title="Contact">
+        <ContactInfo />
+      </Section>
     </AppContainer>
   </div>
 );

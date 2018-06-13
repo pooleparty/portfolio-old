@@ -25,6 +25,7 @@ declare namespace GQL {
     skills: Array<ISkill> | null;
     projects: Array<IProject> | null;
     experience: Array<IExperience> | null;
+    contactInfo: IContactInfo | null;
   }
 
   interface ISkill {
@@ -49,6 +50,13 @@ declare namespace GQL {
     location: string;
     startDate: any;
     endDate: any | null;
+  }
+
+  interface IContactInfo {
+    __typename: 'ContactInfo';
+    email: string;
+    github: string;
+    linkedin: string;
   }
 }
 
