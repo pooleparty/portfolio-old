@@ -9,7 +9,7 @@ import { ApolloLink } from 'apollo-link';
 import App from './App';
 
 const link = createHttpLink({
-  uri: 'http://localhost:3000/graphql',
+  uri: '/graphql',
 }) as ApolloLink;
 
 const client = new ApolloClient({
