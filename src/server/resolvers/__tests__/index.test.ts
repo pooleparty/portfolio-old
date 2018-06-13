@@ -15,12 +15,18 @@ describe('resolvers', () => {
     test('should return skills fomr context db', () => {
       const context = {
         db: {
-          skills: ['a', 'b', 'c'],
+          skills: [
+            {
+              name: '',
+              category: '',
+              logo: '',
+            },
+          ],
         },
       };
       const skills = resolvers.Query.skills(null, null, context);
 
-      expect(skills).toHaveLength(3);
+      expect(skills).toHaveLength(1);
       expect(skills).toEqual(expect.arrayContaining(context.db.skills));
     });
 
@@ -32,12 +38,18 @@ describe('resolvers', () => {
     test('should return projects from context db', () => {
       const context = {
         db: {
-          projects: ['a', 'b', 'c'],
+          projects: [
+            {
+              name: '',
+              description: '',
+              link: '',
+            },
+          ],
         },
       };
       const projects = resolvers.Query.projects(null, null, context);
 
-      expect(projects).toHaveLength(3);
+      expect(projects).toHaveLength(1);
       expect(projects).toEqual(expect.arrayContaining(context.db.projects));
     });
 
@@ -49,12 +61,20 @@ describe('resolvers', () => {
     test('should return experience from context db', () => {
       const context = {
         db: {
-          experience: ['a', 'b', 'c'],
+          experience: [
+            {
+              title: '',
+              description: '',
+              company: '',
+              location: '',
+              startDate: '',
+            },
+          ],
         },
       };
       const experience = resolvers.Query.experience(null, null, context);
 
-      expect(experience).toHaveLength(3);
+      expect(experience).toHaveLength(1);
       expect(experience).toEqual(expect.arrayContaining(context.db.experience));
     });
   });

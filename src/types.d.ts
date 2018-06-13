@@ -1,7 +1,7 @@
 interface IDatabase {
-  skills: DB.ISkill[];
-  projects: DB.IProject[];
-  experience: DB.IExperience[];
+  skills?: DB.ISkill[];
+  projects?: DB.IProject[];
+  experience?: DB.IExperience[];
 }
 
 interface IContext {
@@ -11,7 +11,7 @@ interface IContext {
 declare namespace DB {
   interface ISkill {
     name: string;
-    category: GQL.SkillCategory | string;
+    category: string;
     logo: string;
   }
 
