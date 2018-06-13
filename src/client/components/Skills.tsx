@@ -31,26 +31,30 @@ const SkillCategoryHeader = styled.div`
   font-size: 1.625rem;
   font-weight: bold;
   font-family: 'Montserrat', sans-serif;
-  border-bottom: 1px solid ${transparentize(0.4, COLORS.black)};
+  border-bottom: 1px solid ${transparentize(0.8, COLORS.black)};
   padding-bottom: 1rem;
   margin-bottom: 1.5rem;
 `;
 
 const SkillList = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-column-gap: 4rem;
+  grid-row-gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, 12.8rem);
+  justify-items: center;
 `;
 
 const Skill = styled.div`
-  margin: 1rem 2rem;
-  width: 12.8rem;
-  text-align: center;
+  display: grid;
+  grid-template-rows: 12.8rem 1fr;
+  grid-gap: 1rem;
+  align-items: center;
 `;
 
 const SkillLogo = styled.img`
-  max-width: 12.8rem;
-  height: 12.8rem;
-  margin-bottom: 0.4rem;
+  display: block;
+  width: 100%;
+  max-height: 100%;
 `;
 
 const SkillName = styled.div`

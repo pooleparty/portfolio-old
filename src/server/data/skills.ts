@@ -72,8 +72,7 @@ const books: DB.ISkill[] = [
   {
     name: 'Jenkins',
     category: 'BUILD TOOLS',
-    logo:
-      'https://upload.wikimedia.org/wikipedia/commons/e/e9/Jenkins_logo.svg',
+    logo: 'https://jenkins.io/images/logos/jenkins/jenkins.svg',
   },
   {
     name: 'Github',
