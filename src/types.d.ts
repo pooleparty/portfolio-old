@@ -1,7 +1,8 @@
 interface IDatabase {
-  books: DB.IBook[];
-  authors: DB.IAuthor[];
-  ratings: DB.IRating[];
+  skills?: DB.ISkill[];
+  projects?: DB.IProject[];
+  experience?: DB.IExperience[];
+  contactInfo?: DB.IContactInfo;
 }
 
 interface IContext {
@@ -9,23 +10,30 @@ interface IContext {
 }
 
 declare namespace DB {
-  interface IBook {
-    id: string | number;
+  interface ISkill {
+    name: string;
+    category: string;
+    logo: string;
+  }
+
+  interface IProject {
+    name: string;
+    description: string;
+    link: string;
+  }
+
+  interface IExperience {
     title: string;
-    price: number;
-    authorId: string | number;
-    publishDate: Date;
+    description: string;
+    company: string;
+    location: string;
+    startDate: any;
+    endDate?: any | null;
   }
 
-  interface IAuthor {
-    id: string | number;
-    firstName: string;
-    lastName: string;
-  }
-
-  interface IRating {
-    bookId: string | number;
-    stars: number;
-    comment: string | null;
+  interface IContactInfo {
+    email: string;
+    github: string;
+    linkedin: string;
   }
 }

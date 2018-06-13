@@ -1,4 +1,3 @@
-import { find, filter } from 'lodash';
 import { GraphQLScalarType, StringValueNode } from 'graphql';
 
 // Define implementation for custom date scalar
@@ -25,57 +24,17 @@ const dateScalar = new GraphQLScalarType({
 // Defined query, mutation, and object field resolvers
 const resolvers = {
   Query: {
-    books: (obj, args, context: IContext) => {
-      return context.db.books;
+    skills: (obj, args, context: IContext) => {
+      return context.db.skills;
     },
-    book: (obj, args, context: IContext) => {
-      return find(context.db.books, {
-        id: args.id,
-      });
+    projects: (obj, args, context: IContext) => {
+      return context.db.projects;
     },
-    authors: (obj, args, context: IContext) => {
-      return context.db.authors;
+    experience: (obj, args, context: IContext) => {
+      return context.db.experience;
     },
-    author: (obj, args, context: IContext) => {
-      return find(context.db.authors, {
-        id: args.id,
-      });
-    },
-    ratings: (obj, args, context: IContext) => {
-      return context.db.ratings;
-    },
-  },
-  Mutation: {
-    createRating: (obj, args, context: IContext) => {
-      const rating = { bookId: args.bookId, ...args.rating };
-      context.db.ratings.push(rating);
-      return rating;
-    },
-  },
-  Book: {
-    author: (book: DB.IBook, args, context: IContext) => {
-      return find(context.db.authors, {
-        id: book.authorId,
-      });
-    },
-    ratings: (book: DB.IBook, args, context: IContext) => {
-      return filter(context.db.ratings, { bookId: book.id });
-    },
-    price: (book: DB.IBook, args) => {
-      if (args.currency === 'EUR') {
-        return book.price * 0.84;
-      }
-      return book.price;
-    },
-  },
-  Author: {
-    books: (author: DB.IAuthor, args, context: IContext) => {
-      return filter(context.db.books, { authorId: author.id });
-    },
-  },
-  Rating: {
-    book: (rating: DB.IRating, args, context: IContext) => {
-      return find(context.db.books, { id: rating.bookId });
+    contactInfo: (obj, args, context: IContext) => {
+      return context.db.contactInfo;
     },
   },
   Date: dateScalar,

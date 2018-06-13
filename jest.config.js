@@ -1,7 +1,6 @@
 module.exports = {
   moduleFileExtensions: ['ts', 'tsx', 'js'],
   collectCoverageFrom: ['**/*.{ts,tsx}'],
-  mapCoverage: true,
   transform: {
     "\\.(gql|graphql)$": "jest-transform-graphql",
     '^.+\\.(j|t)sx?$': '<rootDir>/node_modules/ts-jest/preprocessor.js',
@@ -11,18 +10,19 @@ module.exports = {
     '/node_modules/',
     '/test/',
     '/src/client/styles/',
+    '/src/graphql.d.ts',
     '/src/typings.d.ts',
     '/src/global.d.ts',
     '/src/types.d.ts',
   ],
-  coverageThreshold: {
-    global: {
-      branches: 75,
-      functions: 75,
-      lines: 75,
-      statements: 75,
-    },
-  },
+  // coverageThreshold: {
+  //   global: {
+  //     branches: 75,
+  //     functions: 75,
+  //     lines: 75,
+  //     statements: 75,
+  //   },
+  // },
   setupFiles: ['./test/setup.js'],
   moduleNameMapper: {
     '\\.(css|jpg|png|svg)$': '<rootDir>/test/empty-module.js',

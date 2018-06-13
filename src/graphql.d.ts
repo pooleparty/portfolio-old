@@ -3,7 +3,7 @@
 
 declare namespace GQL {
   interface IGraphQLResponseRoot {
-    data?: IQuery | IMutation;
+    data?: IQuery;
     errors?: Array<IGraphQLResponseError>;
   }
 
@@ -22,75 +22,41 @@ declare namespace GQL {
 
   interface IQuery {
     __typename: 'Query';
-    books: Array<IBook> | null;
-    book: IBook | null;
-    authors: Array<IAuthor> | null;
-    author: IAuthor | null;
-    ratings: Array<IRating> | null;
+    skills: Array<ISkill> | null;
+    projects: Array<IProject> | null;
+    experience: Array<IExperience> | null;
+    contactInfo: IContactInfo | null;
   }
 
-  interface IBookOnQueryArguments {
-    id: number;
+  interface ISkill {
+    __typename: 'Skill';
+    name: string;
+    category: string;
+    logo: string;
   }
 
-  interface IAuthorOnQueryArguments {
-    id: number;
+  interface IProject {
+    __typename: 'Project';
+    name: string;
+    description: string;
+    link: string;
   }
 
-  interface IRatingsOnQueryArguments {
-    bookId: number;
-  }
-
-  interface IBook {
-    __typename: 'Book';
-    id: string;
+  interface IExperience {
+    __typename: 'Experience';
     title: string;
-    price: number;
-    author: IAuthor;
-    ratings: Array<IRating> | null;
-    publishDate: any;
+    description: string;
+    company: string;
+    location: string;
+    startDate: any;
+    endDate: any | null;
   }
 
-  interface IPriceOnBookArguments {
-    /**
-     * @default USD
-     */
-    currency?: Currency | null;
-  }
-
-  enum Currency {
-    USD = 'USD',
-    EUR = 'EUR',
-  }
-
-  interface IAuthor {
-    __typename: 'Author';
-    id: string;
-    firstName: string;
-    lastName: string;
-    books: Array<IBook> | null;
-  }
-
-  interface IRating {
-    __typename: 'Rating';
-    stars: number;
-    comment: string | null;
-    book: IBook | null;
-  }
-
-  interface IMutation {
-    __typename: 'Mutation';
-    createRating: IRating | null;
-  }
-
-  interface ICreateRatingOnMutationArguments {
-    bookId: number;
-    rating: IRatingInput;
-  }
-
-  interface IRatingInput {
-    stars: number;
-    comment?: string | null;
+  interface IContactInfo {
+    __typename: 'ContactInfo';
+    email: string;
+    github: string;
+    linkedin: string;
   }
 }
 

@@ -1,11 +1,13 @@
-import books from '../data/books';
-import authors from '../data/authors';
-import ratings from '../data/ratings';
+import skills from '../data/skills';
+import projects from '../data/projects';
+import experience from '../data/experience';
+import contactInfo from '../data/contactInfo';
 
 const db: IDatabase = {
-  books,
-  authors,
-  ratings,
+  skills,
+  projects,
+  experience,
+  contactInfo,
 };
 
 const getDatabase = () => db;

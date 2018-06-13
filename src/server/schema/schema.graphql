@@ -1,38 +1,35 @@
 type Query {
-  books: [Book]
-  book(id: Int!): Book
-  authors: [Author]
-  author(id: Int!): Author
-  ratings(bookId: Int!): [Rating]
+  skills: [Skill]
+  projects: [Project]
+  experience: [Experience]
+  contactInfo: ContactInfo
 }
-type Book {
-  id: ID!
+
+type Experience {
   title: String!
-  price(currency: Currency = USD): Float!
-  author: Author!
-  ratings: [Rating]
-  publishDate: Date!
+  description: String!
+  company: String!
+  location: String!
+  startDate: Date!
+  endDate: Date
 }
-type Author {
-  id: ID!
-  firstName: String!
-  lastName: String!
-  books: [Book]
+
+type Project {
+  name: String!
+  description: String!
+  link: String!
 }
-type Rating {
-  stars: Int!
-  comment: String
-  book : Book!
+
+type Skill {
+  name: String!
+  category: String!
+  logo: String!
 }
-enum Currency {
-  USD
-  EUR
+
+type ContactInfo {
+  email: String!
+  github: String!
+  linkedin: String!
 }
+
 scalar Date
-type Mutation {
-  createRating(bookId: Int!, rating: RatingInput!): Rating
-}
-input RatingInput {
-  stars: Int!
-  comment: String
-}

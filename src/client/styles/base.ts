@@ -1,4 +1,4 @@
-import { baseFont, headerFont, pxToRem } from './utils';
+import { baseFont, headerFont } from './utils';
 import { COLORS } from './vars';
 
 export default `
@@ -19,12 +19,12 @@ export default `
     font-size: 1.6rem;
     line-height: 1.35
 
-    @media only screen and (min-width: 992px) {
-      font-size: ${pxToRem(15)};
+    @media only screen and (min-width: 57.625em) {
+      font-size: 1.5rem;
     }
 
-    @media only screen and (min-width: 1200px) {
-      font-size: ${pxToRem(16)};
+    @media only screen and (min-width: 75em) {
+      font-size: 1.6rem;
     }
   }
 

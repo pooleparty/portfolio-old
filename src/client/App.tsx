@@ -3,9 +3,11 @@ import { injectGlobal } from 'styled-components';
 import base from './styles/base';
 import NavigationMenu from './components/NavigationMenu';
 import Section from './components/Section';
+import Skills from './components/Skills';
 import Meta from './Meta';
 import HeroImage from './styledComponents/HeroImage';
 import AppContainer from './styledComponents/AppContainer';
+import ContactInfo from './components/ContactInfo';
 
 injectGlobal`${base}`;
 
@@ -22,9 +24,13 @@ const App: React.SFC<Props> = ({ className }) => (
       <Section id="about" title="About" />
       <Section id="experience" title="Experience" />
       <Section id="projects" title="Projects" />
-      <Section id="skills" title="Skills" />
+      <Section id="skills" title="Skills">
+        <Skills />
+      </Section>
       <Section id="education" title="Education" />
-      <Section id="contact" title="Contact" />
+      <Section id="contact" title="Contact">
+        <ContactInfo />
+      </Section>
     </AppContainer>
   </div>
 );

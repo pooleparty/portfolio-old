@@ -23,7 +23,7 @@ export default styled.nav`
       &.logo {
         text-align: center;
         border-bottom: 1px solid #ddd;
-        padding: 20px 30px;
+        padding: 2rem 3rem;
       }
     }
   }
