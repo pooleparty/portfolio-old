@@ -4,7 +4,7 @@ import Section from '../Section';
 
 describe('Section', () => {
   test('should render', () => {
-    const wrapper = mount(<Section />);
+    const wrapper = mount(<Section title="test" />);
     expect(wrapper).toHaveLength(1);
   });
 });

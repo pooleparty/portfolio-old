@@ -10,6 +10,7 @@ module.exports = {
     '/node_modules/',
     '/test/',
     '/src/client/styles/',
+    '/src/graphql.d.ts',
     '/src/typings.d.ts',
     '/src/global.d.ts',
     '/src/types.d.ts',
