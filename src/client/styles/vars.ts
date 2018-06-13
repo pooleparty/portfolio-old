@@ -21,11 +21,11 @@ export function lighten(color: string, amount: number) {
 // };
 
 export const BREAKPOINTS = {
-  mobile: '60rem',
+  mobile: '37.5em',
 };
 
-export const NAVBAR_HEIGHT = '64px';
-export const SIDEBAR_WIDTH = '190px';
+export const NAVBAR_HEIGHT = '7rem';
+export const SIDEBAR_WIDTH = '19rem';
 
 // dark-gray: #282828
 // gray: #424242

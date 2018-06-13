@@ -4,9 +4,9 @@ import Header from '../styledComponents/Header';
 
 export default styled(Header)`
   background-color: ${COLORS.blue};
-  padding: 30px 40px;
+  padding: 3rem 4rem;
 
   @media (max-width: ${BREAKPOINTS.mobile}) {
-    padding: 20px 30px;
+    padding: 2rem 3rem;
   }
 `;

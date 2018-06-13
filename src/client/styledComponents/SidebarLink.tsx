@@ -4,7 +4,7 @@ import { COLORS } from '../styles/vars';
 const SidebarLink = styled.a`
   display: block;
   line-height: 100%;
-  padding: 12px;
+  padding: 1.2rem;
   text-decoration: none;
   color: ${COLORS.white};
   transition: all 0.2s;

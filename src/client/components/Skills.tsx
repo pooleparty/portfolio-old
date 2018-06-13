@@ -22,7 +22,7 @@ class SkillsQuery extends Query<GQL.IQuery> {}
 const SkillCategory = styled.div`
   color: ${transparentize(0.4, COLORS.black)};
   background: ${COLORS.white};
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.4);
   padding: 2rem;
   margin-bottom: 3rem;
 `;
@@ -43,12 +43,14 @@ const SkillList = styled.div`
 
 const Skill = styled.div`
   margin: 1rem 2rem;
+  width: 12.8rem;
+  text-align: center;
 `;
 
 const SkillLogo = styled.img`
-  width: 128px;
-  height: 128px;
-  margin-bottom: 4px;
+  max-width: 12.8rem;
+  height: 12.8rem;
+  margin-bottom: 0.4rem;
 `;
 
 const SkillName = styled.div`
